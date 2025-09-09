@@ -52,7 +52,7 @@ export default function DeepLinkButton({
     // Guard for non-browser environments, though this is a client component.
     if (typeof window === "undefined" || typeof document === "undefined") return;
 
-    const ua = navigator.userAgent || navigator.vendor || (window as any).opera || "";
+    const ua = navigator.userAgent || navigator.vendor || "";
     const isAndroid = /android/i.test(ua);
     const isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 
