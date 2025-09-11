@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import Link from "next/link";
 
 type CanonicalResult = {
   status: "success" | "failed" | "cancelled";
@@ -19,7 +20,7 @@ export default function ResultClient() {
   const canonical: CanonicalResult = useMemo(() => {
     const sp = searchParams;
     const rawStatus = (sp.get("status") || "").toLowerCase();
-    let status: CanonicalResult["status"] =
+    const status: CanonicalResult["status"] =
       rawStatus === "success" || rawStatus === "ok"
         ? "success"
         : rawStatus === "cancelled" || rawStatus === "canceled"
@@ -68,10 +69,7 @@ export default function ResultClient() {
       ? "bg-yellow-100 text-yellow-700"
       : "bg-red-100 text-red-700";
 
-  const fullUrl = useMemo(() => {
-    if (typeof window === "undefined") return "";
-    return window.location.href;
-  }, [hasReplaced, canonical]);
+  const fullUrl = typeof window === "undefined" ? "" : window.location.href;
 
   return (
     <div className="min-h-screen w-full flex flex-col items-center justify-center gap-8">
@@ -106,12 +104,12 @@ export default function ResultClient() {
       <div className="text-center">
         <p className="text-xs text-gray-500 break-all mb-2">{fullUrl}</p>
         <div className="flex items-center justify-center gap-3">
-          <a
+          <Link
             href="/"
             className="inline-flex items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-white hover:bg-gray-800"
           >
             Back to Home
-          </a>
+          </Link>
           <button
             type="button"
             onClick={() => {
@@ -136,4 +134,3 @@ function LabelValue({ label, value }: { label: string; value: string }) {
     </div>
   );
 }
-
