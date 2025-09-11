@@ -29,8 +29,6 @@ export async function get<T>(path: string, init?: RequestInit): Promise<T> {
   const API_KEY = getApiKey();
   const url = `${API_BASE}${path}`;
 
-  console.log("API KEY IS:", API_KEY);
-
   const res = await fetch(url, {
     ...init,
     headers: {
