@@ -1,7 +1,9 @@
+"use client";
+
 import DeepLinkButton from "@/components/DeepLinkButton";
 import Image from "next/image";
 
-export default async function Home() {
+export default function Home() {
   return (
     <div className="flex min-h-dvh w-full items-center justify-center md:min-h-screen">
       <div className="hero-container relative overflow-hidden md:rounded-2xl md:shadow-xl">
