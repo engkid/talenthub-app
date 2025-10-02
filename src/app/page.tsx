@@ -23,10 +23,10 @@ export default function Home() {
         />
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 px-6 text-center">
           <DeepLinkButton
-            deepLink="https://discord.gg/p4XHPKuqXd"
-            iosStoreUrl="https://discord.gg/p4XHPKuqXd"
-            androidStoreUrl="https://discord.gg/p4XHPKuqXd"
-            webFallbackUrl="https://discord.gg/p4XHPKuqXd"
+            deepLink="https://discord.gg/2GudGHJWn7"
+            iosStoreUrl="https://discord.gg/2GudGHJWn7"
+            androidStoreUrl="https://discord.gg/2GudGHJWn7"
+            webFallbackUrl="https://discord.gg/2GudGHJWn7"
           >
             JOIN SLICKWAVE!
           </DeepLinkButton>
