@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Slickwave",
-  description: "Welcome to Slickwave!",
+  description: "Welcome to Slickwave! by Engkid",
 };
 
 export default function RootLayout({
